@@ -1,66 +1,22 @@
-## Foundry
+# NOTICE
+If you are not 100% comfortable on how to use this tool, then please reach out and someone from the Thunderhead team will assist. This operation is irreversible and it is super annoying if an operator adds their validators incorrectly. 
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Only proceed to the following steps if you are 100% certain that you know what you are doing, otherwise reach out for support. 
 
-Foundry consists of:
+# Add Your Validators to StakedFLIP
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Install Foundry
+[Install](https://book.getfoundry.sh/getting-started/installation) Foundry by doing:
 
-## Documentation
+`curl -L https://foundry.paradigm.xyz | bash`
 
-https://book.getfoundry.sh/
+## Add your addresses  
+Open the `src/AddValidators.s.sol` file and input the hex version of your validator addresses into the script. Ensure that the array length matches how many validators you have. 
 
-## Usage
+## Run the Script
 
-### Build
+Enter:
 
-```shell
-$ forge build
-```
+`forge script script/AddValidators.s.sol --rpc-url https://rpc.ankr.com/eth  --mnemonic-derivation-paths "m/44'/60'/0'/0/8" --trezor`
 
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Specifying your hardware wallet and derivation path. 

@@ -21,7 +21,7 @@ contract AddValidatorsScript is Script {
         validators[4] = 0x70a6a7438471ac5e4b777de7b62d0426e9b03310cb0d69ad57860d9a590da040;
 
         vm.broadcast();
-            output.addValidators(validators, 3);
+            output.addValidators(validators, 4);
         
         
         //for (uint i = 49; i < 59; i++) {
@@ -30,7 +30,7 @@ contract AddValidatorsScript is Script {
 
         for (uint i = 0; i < 10; i++) {
             (uint id,,) = output.validators(validators[i]);
-            require(id == 3, "validator not added");
+            require(id == 4, "validator not added");
         }
     }
 }

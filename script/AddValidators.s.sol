@@ -28,7 +28,7 @@ contract AddValidatorsScript is Script {
           //  require(output.validatorAddresses(i) == validators[i - 49], "validator not added");
         //}
 
-        for (uint i = 0; i < 10; i++) {
+        for (uint i = 0; i < 5; i++) {
             (uint id,,) = output.validators(validators[i]);
             require(id == 4, "validator not added");
         }

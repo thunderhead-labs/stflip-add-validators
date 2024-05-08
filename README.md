@@ -20,3 +20,18 @@ Enter:
 `forge script script/AddValidators.s.sol --rpc-url https://rpc.ankr.com/eth  --mnemonic-derivation-paths "m/44'/60'/0'/0/8" --trezor`
 
 Specifying your hardware wallet and derivation path. 
+
+
+# Claim stFLIP Fees
+
+## Setup script
+
+Open the `script/ClaimFee.s.sol` script and enter your `operatorId`, desired amount to claim, and whether you'd like to receive FLIP or stFLIP. 
+
+## Run the Script
+
+Enter:
+
+`forge script script/ClaimFee.s.sol --rpc-url https://rpc.ankr.com/eth  --mnemonic-derivation-paths "m/44'/60'/0'/0/8" --trezor`
+
+Specifying your hardware wallet and derivation path.

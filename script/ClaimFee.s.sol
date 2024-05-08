@@ -26,6 +26,8 @@ contract ClaimFeeScript is Script {
         (, uint256 pendingFee, ) = rebaser.operators(operatorId);
 
         console.log("Operator ID: ", operatorId, " can claim FLIP amount: ", pendingFee /10**18);
+	vm.startBroadcast();
         rebaser.claimFee(amount, max, receiveFlip, operatorId);
-    }
+	vm.stopBroadcast();    
+}
 }
